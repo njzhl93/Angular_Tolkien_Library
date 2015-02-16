@@ -1,0 +1,1 @@
+var tolkienApp = angular.module('tolkienLibraryApp', ['ngRoute']);
