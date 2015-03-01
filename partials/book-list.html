@@ -13,7 +13,11 @@
 
      <ul  class="books">
         <li ng-repeat="book in books | filter:{name: query } | orderBy:orderProp" class="thumbnail">
-           <a href="#/books/{{book.id}}" class="thumb"><img ng-src="{{book.imageUrl}}"></a>
+			
+           <a href="#/books/{{book.id}}" class="thumb"><img ng-src="{{book.imageUrl}}"></a></br></br></br>
+			<span class="glyphicon glyphicon-thumbs-up"
+                     ng-click="incrementUpvotes(book)">                 </span>
+                     {{book.upvotes}}
            <a href="#/books/{{book.id}}">{{book.name}}</a>
            <p>{{book.snippet}}</p>
         </li>

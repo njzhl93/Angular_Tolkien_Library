@@ -28,6 +28,10 @@ var tolkienApp = angular.module('tolkienLibraryApp', ['ngRoute']);
                    $scope.books = data
                  })
              $scope.orderProp = 'age';
+			  $scope.incrementUpvotes = function(book) {
+                  book.upvotes += 1;
+
+       }
           }]);
 
     tolkienApp.controller('BookDetailCtrl', 
@@ -36,7 +40,6 @@ var tolkienApp = angular.module('tolkienLibraryApp', ['ngRoute']);
 
              BookService.getBook($routeParams.bookId)
                 .success(function(data) {
-//				   console.log(data)
                    $scope.book = data
 //                   $scope.img = $scope.book.images[0]
                    })
@@ -52,12 +55,10 @@ var tolkienApp = angular.module('tolkienLibraryApp', ['ngRoute']);
        function ($scope,BookService ,$routeParams, BookService) {
 		        BookService.getBook($routeParams.bookId).
 				success(function(data) {$scope.book = data})
-//			 console.log(BookService.getBook($routeParams.bookId))
              $scope.addComment = function(){
                 $scope.book.comments.push({
                   body: $scope.comment.body,
                   author: $scope.comment.author ,
-                  upvotes: 0
                 })
                 $scope.comment = {} ;
 			 }

@@ -3,8 +3,54 @@
    	"age": 0,
    	"id": "The-Hobbit-and-The-Lord-of-the-Rings",
    	"name": "The Hobbit and The Lord of the Rings",
-   	"snippet": "Immerse yourself in Middle-earth with Tolkien’s classic masterpieces behind the films"
-
-
+   	"snippet": "Immerse yourself in Middle-earth with Tolkien’s classic masterpieces behind the films.",
+	"imageUrl": "img/books/The-Hobbit-and-The-Lord-of-the-Rings.png",
+	"upvotes" : 2
+   },
+	
+	{
+   	"age": 1,
+   	"id": "The-Hobbit",
+   	"name": "The Hobbit",
+   	"snippet": "The Hobbit is the unforgettable story of Bilbo, a peace-loving hobbit, who embarks on a strange and magical adventure.",
+	"imageUrl": "img/books/The-Hobbit.png",
+	"upvotes" : 0
+   },
+	
+	
+	{
+   	"age": 2,
+   	"id": "The-Fellowship-of-the-Ring",
+   	"name": "The Fellowship of the Ring",
+   	"snippet": "Continuing the story begun in The Hobbit, this is the first part of Tolkien’s epic masterpiece.",
+	"imageUrl": "img/books/The-Fellowship-of-the-Ring.png",
+	"upvotes" : 0
+   },
+	
+	{
+   	"age": 3,
+   	"id": "The-Two-Towers",
+   	"name": "The Two Towers",
+   	"snippet": "Building on the story begun in The Hobbit and The Fellowship of the Ring, this is the second part of Tolkien’s epic masterpiece.",
+	"imageUrl": "img/books/The-Two-Towers.png",
+	"upvotes" : 0
+   },
+	
+	{
+   	"age": 4,
+   	"id": "The-Return-of-the-King",
+   	"name": "The Return of the King",
+   	"snippet": "Concluding the story begun in The Hobbit, this is the final part of Tolkien’s epic masterpiece.",
+	"imageUrl": "img/books/The-Return-of-the-King.png",
+	"upvotes" : 0
+   },
+	
+	{
+   	"age": 5,
+   	"id": "The-Silmarillion",
+   	"name": "The Silmarillion",
+   	"snippet": "A new B-format edition of this novel, designed to take fans of The Hobbit and The Lord of the Rings deeper into the myths and legends of Middle-earth.",
+	"imageUrl": "img/books/The-Silmarillion.png",
+	"upvotes" : 0
    }
 ]

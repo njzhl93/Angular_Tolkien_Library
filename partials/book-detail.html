@@ -1,16 +1,11 @@
 <div >
-      <img ng-src="{{img}}" class="book">
+      <img ng-src="{{book.imageUrl}}" class="book">
     </div>
 
     <h1>{{book.name}}</h1>
 
     <p>{{book.description}}</p>
 
-    <ul class="book-thumbs">
-      <li ng-repeat="img in book.images">
-        <img ng-src="{{img}}" ng-click="setImage(img)">
-      </li>
-    </ul>
 
 
     	<p>	<span>Name:</span><a ng-show="book.link != null" href="{{book.link}}">
