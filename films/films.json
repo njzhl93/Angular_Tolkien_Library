@@ -1,0 +1,29 @@
+[
+   {
+   	"age": 0,
+   	"id": "The-Fellowship-of-the-Ring",
+   	"name": "The Fellowship of the Ring",
+   	"snippet": "A meek hobbit of the Shire and eight companions set out on a journey to Mount Doom to destroy the One Ring and the dark lord Sauron.",
+	"imageUrl": "img/films/The-Fellowship-of-the-Ring.png",
+	"upvotes" : 0
+   },
+
+   {
+      "age": 1,
+      "id": "The-Two-Towers",
+      "name": "The Two Towers ",
+      "snippet": "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.",
+   "imageUrl": "img/films/The-Two-Towers.png",
+   "upvotes" : 0
+   },
+
+   {
+      "age": 2,
+      "id": "The-Return-of-the-King",
+      "name": "The Return of the King",
+      "snippet": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+   "imageUrl": "img/films/The-Return-of-the-King.png",
+   "upvotes" : 0
+   }
+
+]

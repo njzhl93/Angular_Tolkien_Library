@@ -1,0 +1,26 @@
+<div class="col-md-2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+      </select></br></br></br>
+      <a href="#/books"><h4>Click to Books</h4></a>
+    </div>
+
+   <div class="col-md-10">
+
+     <ul  class="films">
+        <li ng-repeat="film in films | filter:{name: query } | orderBy:orderProp" class="thumbnail">
+			
+           <a href="#/films/{{film.id}}" class="thumb"><img ng-src="{{film.imageUrl}}"></a></br></br></br>
+			<span class="glyphicon glyphicon-thumbs-up"
+                     ng-click="incrementUpvotes(film)">                 </span>
+                     {{film.upvotes}}
+           <a href="#/films/{{film.id}}">{{film.name}}</a>
+           <p>{{film.snippet}}</p>
+        </li>
+      </ul>
+    </div>

@@ -13,8 +13,21 @@ var tolkienApp = angular.module('tolkienLibraryApp', ['ngRoute']);
           })
           .when('/books/:bookId/comments',
           {
-              controller: 'CommentsController',
-              templateUrl: 'partials/comments.html'
+              controller: 'BcommentsController',
+              templateUrl: 'partials/bcomments.html'
+          })
+          .when('/films', {
+            templateUrl: 'partials/film-list.html',
+            controller: 'FilmListCtrl'
+          })
+          .when('/films/:filmId', {
+            templateUrl: 'partials/film-detail.html',
+            controller: 'FilmDetailCtrl'
+          })
+          .when('/films/:filmId/comments',
+          {
+              controller: 'FcommentsController',
+              templateUrl: 'partials/fcomments.html'
           })
           .otherwise({
             redirectTo: '/books'
@@ -41,7 +54,6 @@ var tolkienApp = angular.module('tolkienLibraryApp', ['ngRoute']);
              BookService.getBook($routeParams.bookId)
                 .success(function(data) {
                    $scope.book = data
-//                   $scope.img = $scope.book.images[0]
                    })
                 .error(function(err) {
                     $location.path('./books') 
@@ -51,12 +63,56 @@ var tolkienApp = angular.module('tolkienLibraryApp', ['ngRoute']);
                }
       }])
 
-    tolkienApp.controller('CommentsController', ['$scope', '$location', '$routeParams', 'BookService',
+
+    tolkienApp.controller('FilmListCtrl', 
+        ['$scope', 'FilmService',
+          function($scope, FilmService) {
+             FilmService.getFilms().success(function(data) {
+                   $scope.films = data
+                 })
+             $scope.orderProp = 'age';
+        $scope.incrementUpvotes = function(film) {
+                  film.upvotes += 1;
+
+       }
+          }]);
+
+    tolkienApp.controller('FilmDetailCtrl', 
+         ['$scope', '$location', '$routeParams', 'FilmService', 
+         function($scope, $location, $routeParams, FilmService) {
+
+             FilmService.getFilm($routeParams.filmId)
+                .success(function(data) {
+                   $scope.film = data
+                   })
+                .error(function(err) {
+                    $location.path('./films') 
+                  })
+             $scope.setImage = function(img) {
+                  $scope.img = img
+               }
+      }])
+
+
+    tolkienApp.controller('BcommentsController', ['$scope', '$location', '$routeParams', 'BookService',
        function ($scope,BookService ,$routeParams, BookService) {
 		        BookService.getBook($routeParams.bookId).
 				success(function(data) {$scope.book = data})
              $scope.addComment = function(){
                 $scope.book.comments.push({
+                  body: $scope.comment.body,
+                  author: $scope.comment.author ,
+                })
+                $scope.comment = {} ;
+			 }
+        }])
+	
+	    tolkienApp.controller('FcommentsController', ['$scope', '$location', '$routeParams', 'FilmService',
+       function ($scope,FilmService ,$routeParams, FilmService) {
+		        FilmService.getFilm($routeParams.filmId).
+				success(function(data) {$scope.film = data})
+             $scope.addComment = function(){
+                $scope.film.comments.push({
                   body: $scope.comment.body,
                   author: $scope.comment.author ,
                 })
@@ -71,6 +127,18 @@ var tolkienApp = angular.module('tolkienLibraryApp', ['ngRoute']);
                 }, 
             getBook : function(id) {
                     return $http.get('books/' + id + '.json')
+                }
+        }
+        return api
+    }])
+
+    tolkienApp.factory('FilmService', ['$http' , function($http){
+        var api = {
+            getFilms : function() {
+                    return $http.get('films/films.json')            
+                }, 
+            getFilm : function(id) {
+                    return $http.get('films/' + id + '.json')
                 }
         }
         return api

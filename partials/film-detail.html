@@ -1,0 +1,25 @@
+<div >
+      <img ng-src="{{film.imageUrl}}" class="book">
+    </div>
+
+    <h1>{{film.name}}</h1>
+
+    <p>{{film.description}}</p>
+
+
+
+    	<p>	<span>Name:</span><a ng-show="film.link != null" href="{{film.link}}">
+            {{film.name}}
+          </a> </p>
+
+    	<p>	<span>Date:</span>{{film.date}} </p>
+
+    	<p>	<span>Director:</span>{{film.director}} </p>
+
+    	<p>	<span>Actors:</span>{{film.actors}} </p>
+
+        <span>
+            <a href="#/films/{{film.id}}/comments">Comments</a>
+        </span>
+
+</div>
