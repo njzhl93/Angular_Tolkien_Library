@@ -37,6 +37,7 @@ var tolkienApp = angular.module('tolkienLibraryApp', ['ngRoute']);
     tolkienApp.controller('BookListCtrl', 
         ['$scope', 'BookService',
           function($scope, BookService) {
+			  $scope.image = 'img/JRRT.png';
              BookService.getBooks().success(function(data) {
                    $scope.books = data
                  })

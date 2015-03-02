@@ -7,11 +7,12 @@
         <option value="name">Alphabetical</option>
         <option value="age">Newest</option>
       </select></br></br></br>
+     <a href="#/films"><img ng-scr="{{image}}"></a>
      <a href="#/films"><h4>Click to Films</h4></a>
+
     </div>
 
    <div class="col-md-10">
-
      <ul  class="books">
         <li ng-repeat="book in books | filter:{name: query } | orderBy:orderProp" class="thumbnail">
 			
